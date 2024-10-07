@@ -1,0 +1,145 @@
+/* Tipografia */
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
+
+*, 
+*::after, 
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Catamaran", sans-serif;
+}
+
+:root{
+    --gris-iryoku:rgb(18,13,12);
+    --rojo-iryoku:rgb(189,38,15);
+    --white: rgb(255,255,255);
+    --black: rgb(0,0,0);
+}
+
+body{
+    background: linear-gradient(var(--rojo-iryoku), var(--gris-iryoku));
+    min-height: 100vh;
+    width: 100%;
+}
+
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .container {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gris-iryoku);
+    border-radius: 10px;
+    box-shadow: 1px 2px 12px rgba(146, 146, 146, 0.3);
+}
+
+.home .container .logo,
+.home .container .formulario{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .container .logo {
+    padding: 1rem;
+}
+
+.home .container .logo img{
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.home .container .formulario{
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.home .container .formulario h2{
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+
+
+
+/* formulario */
+
+.formulario form .label {
+    display: grid;
+    width: 100%;
+    padding: 1rem 0;
+    grid-template-areas: "input";
+
+    > * {
+        grid-area: input;
+    }
+}
+
+.formulario form .label .span {
+    transform-origin: left;
+    transition: transform .3s, color .3s;
+    padding: 5px 10px;
+    color: var(--white);
+}
+
+.label .input {
+    height: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--rojo-iryoku);
+    font: inherit;
+    border-radius: 5px;
+    background:var(--bg-input);
+
+    &:focus + .span,
+    &:not(:placeholder-shown) + .span {
+
+        color: var(--verde_3);
+        transform: translate(0, -100%) scale(.8);
+    }
+}
+
+.input{
+    color: white;
+    padding: 0 .5rem;
+}
+
+/* boton */
+
+.home .container .formulario .btn-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .container .formulario .btn-box .btn{
+    padding: .3rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--rojo-iryoku);
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: 600;
+    background: transparent;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.home .container .formulario .btn-box .btn:hover{
+    background: var(--rojo-iryoku);
+}
